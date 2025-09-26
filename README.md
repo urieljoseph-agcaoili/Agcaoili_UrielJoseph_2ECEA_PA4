@@ -51,17 +51,17 @@ Mindy = boardexams.loc[(boardexams['Gender'] == 'Female') & (boardexams['Average
 Mindy   #Displays data frame "Mindy"
 ```
 
-
+This line of code is used to import matplotlib which is used to create and customize graphs for data frames.
 ```python
 import matplotlib.pyplot as plt   #Imports matplotlib as plt into the code
 ```
 
-
+This line of code takes the mean of the columns "Track" and "Average" in the data frame using code "boardexams.groupby" amd ".mean", which groups the two columns then takes their mean. The result is then stored in "track_avg".
 ```python
 track_avg = boardexams.groupby('Track')['Average'].mean()   #Groups "Track" and "Average" and takes their mean, then stores the data into "track_avg"
 ```
 
-
+This lines of codes are written to create a bar graph with the data from "track_avg". For the first line of code we create a base figure for the graph that is 8 by 5. The next code inputs the data from the "track_avg" and sets the color of the bars in the bar graph to "lightgreen". For codes "plt.title", "plt.xlabel", and "plt.ylabel" we put a title on the bar graph and labels for the x and y axis of the graph. The code "plt.xticks" rotates the labels in the x-axis to 45 degrees, this was done for this bra graph so the lables would be readable. For the next line of code it simply makes the sub plots in the graph fit. In the next line of code grid lines are added in the y-axis of the bar graph. The completed bar graph is then shown to the user.
 ```python
 plt.figure(figsize=(8, 5))   #Creates a figure that has a size of 8 by 5
 plt.bar(track_avg.index, track_avg.values, color='lightgreen')   #Sets the figure into a bar graph where the bars in in the graph is colored "lightgreen" and uses the data from "track_avg"
@@ -74,12 +74,12 @@ plt.grid(axis='y', linestyle='--', alpha=0.5)   #Puts grid lines in the y-axis w
 plt.show()   #Displays the graph "track_avg"
 ```
 
-
+This line of code takes the mean of the columns "Gender" and "Average" in the data frame using code "boardexams.groupby" amd ".mean", which groups the two columns then takes their mean. The result is then stored in "gender_avg".
 ```python
 gender_avg = boardexams.groupby('Gender')['Average'].mean()   #Groups "Gender" and "Average" and takes their mean, then stores the data into "gender_avg"
 ```
 
-
+This lines of codes are written to create a bar graph with the data from "gender_avg". For the first line of code we create a base figure for the graph that is 6 by 4. The next code inputs the data from the "gender_avg" and sets the color of the bars in the bar graph to "salmon". For codes "plt.title", "plt.xlabel", and "plt.ylabel" we put a title on the bar graph and labels for the x and y axis of the graph. In the next line of code grid lines are added in the y-axis of the bar graph For the next line of code it simply makes the sub plots in the graph fit. The completed bar graph is then shown to the user.
 ```python
 plt.figure(figsize=(6, 4))   #Creates a figure that has a size of 6 by 4
 plt.bar(gender_avg.index, gender_avg.values, color='salmon')   #Sets the figure into a bar graph where the bars in in the graph is colored "salmon" and uses the data from "gender_avg"
@@ -91,12 +91,12 @@ plt.tight_layout()   #Makes sure the sub plots fits in the graph
 plt.show()   #Displays the graph "gender_avg"
 ```
 
-
+This line of code takes the mean of the columns "Hometown" and "Average" in the data frame using code "boardexams.groupby" amd ".mean", which groups the two columns then takes their mean. The result is then stored in "home_avg".
 ```python
 home_avg = boardexams.groupby('Hometown')['Average'].mean()   #Groups "Hometown" and "Average" and takes their mean, then stores the data into "track_avg"
 ```
 
-
+This lines of codes are written to create a bar graph with the data from "home_avg". For the first line of code we create a base figure for the graph that is 6 by 4. The next code inputs the data from the "home_avg" and sets the color of the bars in the bar graph to "skyblue". For codes "plt.title", "plt.xlabel", and "plt.ylabel" we put a title on the bar graph and labels for the x and y axis of the graph. In the next line of code grid lines are added in the y-axis of the bar graph. For the next line of code it simply makes the sub plots in the graph fit. The completed bar graph is then shown to the user.
 ```python
 plt.figure(figsize=(6, 4))   #Creates a figure that has a size of 6 by 4
 plt.bar(home_avg.index, home_avg.values, color='skyblue')   #Sets the figure into a bar graph where the bars in in the graph is colored "salmon" and uses the data from "home_avg"
