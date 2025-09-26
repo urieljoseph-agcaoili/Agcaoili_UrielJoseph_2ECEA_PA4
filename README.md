@@ -32,19 +32,19 @@ boardexams = pd.read_csv('board2.csv')   #Finds and reads file "board2.cs" then 
 boardexams    #Displays the data frame "boardexams"
 ```
 
-
+This line of code functions to locate elements "Instrumentation", "Luzon", and grades from "electronics" higher than 70 which were located from the columns "Track", "Hometown", and "Electronics". The code then takes the columns "Name", "GEAS", and "Electronics" from the data frame and store it into a new data frame named "Instru". The code used to accomplish this task is "boardexams.loc[]", while the statements inside the brackets are for locating the different elements in the data frame. The data frame is then displayed to be seen by the user.
 ```python
 Instru = boardexams.loc[(boardexams['Track'] == 'Instrumentation') & (boardexams['Hometown'] == 'Luzon') & (boardexams['Electronics'] > 70), ['Name', 'GEAS', 'Electronics']]   #Locates variables whose track is "Intrumentation", hometown is in "Luzon" and grade in "Electronics" is higher then 70, then takes the name, grade in "GEAS" and "Electronics" and was then stored in "Instru" as a new data frame
 
 Instru   #Displays data frame "Instru"
 ```
 
-
+For this line of code a the average grade of the students would be taken and a new column called "Average" is created to store this new data into the data frame. To get the average of the grades the code "boardexams[].mean(axis=1)" was used, wehere we put the columns "Math", "Electronics", "GEAS", and "Communication" inside the bracket so we can take the elements from each columns and take their mean. The average taken was then put into a new column in the data frame which was created using the code "boardexams['Average']".
 ```python
 boardexams['Average'] = boardexams[['Math', 'Electronics', 'GEAS', 'Communication']].mean(axis=1)   #Takes the mean of all grades then stores it in a new column in the data frame.
 ```
 
-
+In this line of code we locate the elements "Female", "Mindanao", and average grades that are equal to or higher than 55, these elements are located from their respective columns "Gender", "Hometown", and "Average". The code then takes the columns "Name", "Track", "Electronics", and "Average" then stores it into a new data frame named "Mindy". For the code to do this task we use the code "boardexams.loc[]", while the statements inside the brackets are used to locate the different elements needed for the data frame. The new data frame is then displayed for the user to see.
 ```python
 Mindy = boardexams.loc[(boardexams['Gender'] == 'Female') & (boardexams['Average'] >= 55), ['Name', 'Track', 'Electronics', 'Average']]   ##Locates variables whose gender is "Female", average is equal or greater than 55 then takes the name, track, grade in "Electronics" and their average and was then stored in "Mindy" as a new data frame
 
